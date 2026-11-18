@@ -1,0 +1,283 @@
+.root {
+    -fx-background-color: #FFFFFF;
+    -fx-font-family: "Segoe UI";
+}
+.menu-bar {
+    -fx-background-color: #1E3A5F;
+    -fx-padding: 3px 8px;
+}
+.menu-bar .menu .label {
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+.menu-bar .menu:hover .label {
+    -fx-text-fill: #CADCFC;
+}
+.menu-bar .context-menu {
+    -fx-background-color: white;
+    -fx-border-color: #DDDDDD;
+}
+.menu-bar .menu-item .label {
+    -fx-text-fill: #222222;
+}
+.menu-bar .menu-item:hover {
+    -fx-background-color: #E3F2FD;
+}
+.label {
+    -fx-text-fill: #222222;
+    -fx-font-size: 12px;
+}
+.app-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1E3A5F;
+}
+.status-label {
+    -fx-text-fill: #2E75B6;
+    -fx-font-style: italic;
+    -fx-font-size: 12px;
+}
+.button {
+    -fx-background-color: linear-gradient(to bottom, #2E75B6, #1A5FA0);
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 20px;
+    -fx-border-radius: 20px;
+    -fx-cursor: hand;
+    -fx-padding: 7px 16px;
+    -fx-effect: dropshadow(gaussian, rgba(30,58,95,0.3), 5, 0, 0, 2);
+}
+.button:hover {
+    -fx-background-color: linear-gradient(to bottom, #3A8FD6, #2E75B6);
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+}
+.button:pressed {
+    -fx-background-color: linear-gradient(to bottom, #1A5FA0, #0E4080);
+    -fx-scale-x: 0.97;
+    -fx-scale-y: 0.97;
+}
+.button-open {
+    -fx-background-color: linear-gradient(to bottom, #2E7D32, #1B5E20);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 20px;
+    -fx-border-radius: 20px;
+    -fx-cursor: hand;
+    -fx-padding: 7px 16px;
+    -fx-effect: dropshadow(gaussian, rgba(46,125,50,0.3), 5, 0, 0, 2);
+}
+.button-open:hover {
+    -fx-background-color: linear-gradient(to bottom, #43A047, #2E7D32);
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+}
+.button-reset {
+    -fx-background-color: linear-gradient(to bottom, #E65100, #BF360C);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 20px;
+    -fx-border-radius: 20px;
+    -fx-cursor: hand;
+    -fx-padding: 7px 16px;
+    -fx-effect: dropshadow(gaussian, rgba(230,81,0,0.3), 5, 0, 0, 2);
+}
+.button-reset:hover {
+    -fx-background-color: linear-gradient(to bottom, #FF6D00, #E65100);
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+}
+.button-encrypt {
+    -fx-background-color: linear-gradient(to bottom, #6A1B9A, #4A0072);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 20px;
+    -fx-border-radius: 20px;
+    -fx-cursor: hand;
+    -fx-padding: 7px 16px;
+    -fx-effect: dropshadow(gaussian, rgba(106,27,154,0.3), 5, 0, 0, 2);
+}
+.button-encrypt:hover {
+    -fx-background-color: linear-gradient(to bottom, #8E24AA, #6A1B9A);
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+}
+.button-decrypt {
+    -fx-background-color: linear-gradient(to bottom, #00838F, #006064);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 20px;
+    -fx-border-radius: 20px;
+    -fx-cursor: hand;
+    -fx-padding: 7px 16px;
+    -fx-effect: dropshadow(gaussian, rgba(0,131,143,0.3), 5, 0, 0, 2);
+}
+.button-decrypt:hover {
+    -fx-background-color: linear-gradient(to bottom, #00ACC1, #00838F);
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+}
+.button-danger {
+    -fx-background-color: linear-gradient(to bottom, #C62828, #8B0000);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 20px;
+    -fx-border-radius: 20px;
+    -fx-cursor: hand;
+    -fx-padding: 7px 16px;
+    -fx-effect: dropshadow(gaussian, rgba(198,40,40,0.3), 5, 0, 0, 2);
+}
+.button-danger:hover {
+    -fx-background-color: linear-gradient(to bottom, #E53935, #C62828);
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+}
+.button-save {
+    -fx-background-color: linear-gradient(to bottom, #558B2F, #33691E);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 20px;
+    -fx-border-radius: 20px;
+    -fx-cursor: hand;
+    -fx-padding: 7px 16px;
+    -fx-effect: dropshadow(gaussian, rgba(85,139,47,0.3), 5, 0, 0, 2);
+}
+.button-save:hover {
+    -fx-background-color: linear-gradient(to bottom, #7CB342, #558B2F);
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+}
+.button-add {
+    -fx-background-color: linear-gradient(to bottom, #E91E63, #C2185B);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 20px;
+    -fx-border-radius: 20px;
+    -fx-cursor: hand;
+    -fx-padding: 7px 14px;
+    -fx-effect: dropshadow(gaussian, rgba(233,30,99,0.3), 5, 0, 0, 2);
+}
+.button-add:hover {
+    -fx-background-color: linear-gradient(to bottom, #F06292, #E91E63);
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+}
+.button-search {
+    -fx-background-color: linear-gradient(to bottom, #F57F17, #E65100);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 20px;
+    -fx-border-radius: 20px;
+    -fx-cursor: hand;
+    -fx-padding: 7px 14px;
+    -fx-effect: dropshadow(gaussian, rgba(245,127,23,0.3), 5, 0, 0, 2);
+}
+.button-search:hover {
+    -fx-background-color: linear-gradient(to bottom, #FFB300, #F57F17);
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+}
+.button-gray {
+    -fx-background-color: linear-gradient(to bottom, #424242, #212121);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 20px;
+    -fx-border-radius: 20px;
+    -fx-cursor: hand;
+    -fx-padding: 7px 16px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 5, 0, 0, 2);
+}
+.button-gray:hover {
+    -fx-background-color: linear-gradient(to bottom, #616161, #424242);
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+}
+.button-sepia {
+    -fx-background-color: linear-gradient(to bottom, #795548, #4E342E);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 20px;
+    -fx-border-radius: 20px;
+    -fx-cursor: hand;
+    -fx-padding: 7px 16px;
+    -fx-effect: dropshadow(gaussian, rgba(121,85,72,0.3), 5, 0, 0, 2);
+}
+.button-sepia:hover {
+    -fx-background-color: linear-gradient(to bottom, #A1887F, #795548);
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+}
+.titled-pane > .title {
+    -fx-background-color: #E3F2FD;
+    -fx-border-color: #BBDEFB;
+    -fx-border-width: 0 0 1 0;
+    -fx-padding: 6px 12px;
+}
+.titled-pane > .title > .arrow-button .arrow {
+    -fx-background-color: #1E3A5F;
+}
+.titled-pane > .title .text {
+    -fx-fill: #1E3A5F;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+.titled-pane > *.content {
+    -fx-background-color: #FAFAFA;
+    -fx-border-color: #DDDDDD;
+    -fx-border-width: 0 1 1 1;
+    -fx-padding: 10px;
+}
+.list-view {
+    -fx-background-color: #FAFAFA;
+    -fx-border-color: #DDDDDD;
+    -fx-border-width: 1px;
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px;
+}
+.list-view .list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #222222;
+    -fx-font-size: 12px;
+    -fx-padding: 6px 10px;
+}
+.list-view .list-cell:hover {
+    -fx-background-color: #E3F2FD;
+    -fx-text-fill: #1E3A5F;
+}
+.list-view .list-cell:selected {
+    -fx-background-color: linear-gradient(to right, #2E75B6, #1E5A9C);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+.text-field, .password-field {
+    -fx-background-color: white;
+    -fx-border-color: #BBBBBB;
+    -fx-border-width: 1.5px;
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px;
+    -fx-text-fill: #222222;
+    -fx-prompt-text-fill: #AAAAAA;
+    -fx-font-size: 12px;
+    -fx-padding: 6px 10px;
+}
+.text-field:focused, .password-field:focused {
+    -fx-border-color: #2E75B6;
+    -fx-border-width: 2px;
+    -fx-effect: dropshadow(gaussian, rgba(46,117,182,0.2), 6, 0, 0, 0);
+}
+.scroll-bar .thumb {
+    -fx-background-color: #BBBBBB;
+    -fx-background-radius: 4px;
+}
+.scroll-bar .thumb:hover {
+    -fx-background-color: #2E75B6;
+}
+.scroll-bar .increment-button,
+.scroll-bar .decrement-button {
+    -fx-background-color: #F0F0F0;
+}
+.separator .line {
+    -fx-border-color: #DDDDDD;
+}

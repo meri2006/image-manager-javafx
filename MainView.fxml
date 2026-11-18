@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<BorderPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.imagemanager.controller.MainController">
+    <top>
+        <VBox>
+            <MenuBar>
+                <Menu text="Fichier">
+                    <MenuItem text="Ouvrir une image" onAction="#handleOpenImage"/>
+                    <MenuItem text="Sauvegarder l'image" onAction="#handleSaveImage"/>
+                    <SeparatorMenuItem/>
+                    <MenuItem text="Sauvegarder les metadonnees" onAction="#handleSaveMetadata"/>
+                </Menu>
+                <Menu text="Aide">
+                    <MenuItem text="A propos" onAction="#handleAbout"/>
+                </Menu>
+            </MenuBar>
+            <HBox alignment="CENTER_LEFT" spacing="10">
+                <padding><Insets top="8" right="16" bottom="8" left="16"/></padding>
+                <Label text="Gestionnaire d'Images" styleClass="app-title"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Label fx:id="statusLabel" text="Pret." styleClass="status-label"/>
+            </HBox>
+        </VBox>
+    </top>
+    <center>
+        <VBox spacing="8">
+            <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+            <HBox spacing="16" alignment="CENTER_LEFT">
+                <Label text="Fichier :"/>
+                <Label fx:id="fileNameLabel" text="-"/>
+                <Label text="Taille :"/>
+                <Label fx:id="imageSizeLabel" text="-"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button text="Reinitialiser" onAction="#handleResetImage" styleClass="button-reset"/>
+            </HBox>
+            <ScrollPane fitToWidth="true" fitToHeight="true" VBox.vgrow="ALWAYS">
+                <ImageView fx:id="mainImageView" preserveRatio="true" fitWidth="600" fitHeight="500"/>
+            </ScrollPane>
+            <TitledPane text="Historique des transformations" expanded="false">
+                <ListView fx:id="transformHistoryList" prefHeight="80"/>
+            </TitledPane>
+        </VBox>
+    </center>
+    <left>
+        <VBox spacing="8" prefWidth="180">
+            <padding><Insets top="10" right="8" bottom="10" left="8"/></padding>
+            <Label text="Bibliotheque"/>
+            <Button text="+ Ouvrir image" onAction="#handleOpenImage"
+                    maxWidth="Infinity" styleClass="button-open"/>
+            <ListView fx:id="libraryListView" VBox.vgrow="ALWAYS"/>
+        </VBox>
+    </left>
+    <right>
+        <ScrollPane fitToWidth="true" prefWidth="230">
+            <VBox spacing="10">
+                <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+                <TitledPane text="Filtres" expanded="true">
+                    <VBox spacing="6">
+                        <Button text="Echanger RGB" onAction="#handleFilterSwapRGB"
+                                maxWidth="Infinity" styleClass="button-encrypt"/>
+                        <Button text="Noir et Blanc" onAction="#handleFilterGrayscale"
+                                maxWidth="Infinity" styleClass="button-gray"/>
+                        <Button text="Sepia" onAction="#handleFilterSepia"
+                                maxWidth="Infinity" styleClass="button-sepia"/>
+                        <Button text="Detection contours Prewitt" onAction="#handleFilterPrewitt"
+                                maxWidth="Infinity" styleClass="button-danger"/>
+                    </VBox>
+                </TitledPane>
+                <TitledPane text="Transformations" expanded="true">
+                    <VBox spacing="6">
+                        <Label text="Rotation :"/>
+                        <HBox spacing="4">
+                            <Button text="90" onAction="#handleRotate90"
+                                    HBox.hgrow="ALWAYS" maxWidth="Infinity"
+                                    styleClass="button-open"/>
+                            <Button text="180" onAction="#handleRotate180"
+                                    HBox.hgrow="ALWAYS" maxWidth="Infinity"
+                                    styleClass="button-reset"/>
+                            <Button text="270" onAction="#handleRotate270"
+                                    HBox.hgrow="ALWAYS" maxWidth="Infinity"
+                                    styleClass="button-add"/>
+                        </HBox>
+                        <Label text="Symetrie :"/>
+                        <HBox spacing="4">
+                            <Button text="Horizontale" onAction="#handleFlipHorizontal"
+                                    HBox.hgrow="ALWAYS" maxWidth="Infinity"
+                                    styleClass="button-decrypt"/>
+                            <Button text="Verticale" onAction="#handleFlipVertical"
+                                    HBox.hgrow="ALWAYS" maxWidth="Infinity"
+                                    styleClass="button-search"/>
+                        </HBox>
+                    </VBox>
+                </TitledPane>
+                <TitledPane text="Securite" expanded="true">
+                    <VBox spacing="6">
+                        <Label text="Mot de passe :"/>
+                        <PasswordField fx:id="passwordField" promptText="Saisir le mot de passe..."/>
+                        <HBox spacing="4">
+                            <Button text="Chiffrer" onAction="#handleEncrypt"
+                                    HBox.hgrow="ALWAYS" maxWidth="Infinity"
+                                    styleClass="button-encrypt"/>
+                            <Button text="Dechiffrer" onAction="#handleDecrypt"
+                                    HBox.hgrow="ALWAYS" maxWidth="Infinity"
+                                    styleClass="button-decrypt"/>
+                        </HBox>
+                    </VBox>
+                </TitledPane>
+                <TitledPane text="Tags" expanded="true">
+                    <VBox spacing="6">
+                        <HBox spacing="4">
+                            <TextField fx:id="tagInputField" promptText="Nouveau tag..."
+                                       HBox.hgrow="ALWAYS"/>
+                            <Button text="+" onAction="#handleAddTag" styleClass="button-add"/>
+                        </HBox>
+                        <ListView fx:id="tagListView" prefHeight="90"/>
+                        <Button text="Supprimer le tag" onAction="#handleRemoveTag"
+                                maxWidth="Infinity" styleClass="button-danger"/>
+                        <Label text="Recherche par tag :"/>
+                        <HBox spacing="4">
+                            <TextField fx:id="searchTagField" promptText="Chercher..."
+                                       HBox.hgrow="ALWAYS"/>
+                            <Button text="Rechercher" onAction="#handleSearchByTag"
+                                    styleClass="button-search"/>
+                        </HBox>
+                        <ListView fx:id="searchResultListView" prefHeight="80"/>
+                    </VBox>
+                </TitledPane>
+                <TitledPane text="Sauvegarde" expanded="false">
+                    <VBox spacing="6">
+                        <Button text="Sauvegarder image PNG" onAction="#handleSaveImage"
+                                maxWidth="Infinity" styleClass="button-save"/>
+                        <Button text="Sauvegarder metadonnees" onAction="#handleSaveMetadata"
+                                maxWidth="Infinity" styleClass="button-save"/>
+                    </VBox>
+                </TitledPane>
+            </VBox>
+        </ScrollPane>
+    </right>
+</BorderPane>
